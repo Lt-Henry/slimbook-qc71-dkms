@@ -263,6 +263,7 @@ static void qc71_wmi_event_d2_handler(union acpi_object *obj)
 	case 188:
 		pr_info("change perf mode\n");
 		/* TODO: should it be handled here? */
+		do_report = false;
 		sysfs_notify(&qc71_platform_dev->dev.kobj, NULL, "silent_mode");
 		sysfs_notify(&qc71_platform_dev->dev.kobj, NULL, "turbo_mode");
 		break;
